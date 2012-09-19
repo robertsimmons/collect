@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Collect.Web.Controllers
 {
-	public class ListTransformersInputModel
+	public class ListFiguresViewModel
 	{
 	}
 }

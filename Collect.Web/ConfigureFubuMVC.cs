@@ -4,30 +4,30 @@ using FubuMVC.Razor;
 
 namespace Collect.Web
 {
-    public class ConfigureFubuMVC : FubuRegistry
-    {
-        public ConfigureFubuMVC()
-        {
-            // This line turns on the basic diagnostics and request tracing
-            IncludeDiagnostics(true);
+	public class ConfigureFubuMVC : FubuRegistry
+	{
+		public ConfigureFubuMVC()
+		{
+			// This line turns on the basic diagnostics and request tracing
+			IncludeDiagnostics(true);
 
-            // All public methods from concrete classes ending in "Controller"
-            // in this assembly are assumed to be action methods
+			// All public methods from concrete classes ending in "Controller"
+			// in this assembly are assumed to be action methods
 			Actions.IncludeClassesSuffixedWithController();
 
-            // Policies
-            Routes
+			// Policies
+			Routes
 				.HomeIs<HelloInputModel>()
-                .IgnoreControllerNamesEntirely()
+				.IgnoreControllerNamesEntirely()
 				.IgnoreControllerNamespaceEntirely()
-                .IgnoreMethodSuffix("Html")
+				.IgnoreMethodSuffix("Html")
 				.RootAtAssemblyNamespace();
 
 			Import<RazorEngineRegistry>();
 
-            // Match views to action methods by matching
-            // on model type, view name, and namespace
-            Views.TryToAttachWithDefaultConventions();
-        }
-    }
+			// Match views to action methods by matching
+			// on model type, view name, and namespace
+			Views.TryToAttachWithDefaultConventions();
+		}
+	}
 }

@@ -136,13 +136,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FubuMVC.cs" />
+    <Compile Include="App_Start\RavenDBBootstrapper.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />
     <Compile Include="Controllers\HelloInputModel.cs" />
     <Compile Include="Controllers\HelloViewModel.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
-    <Compile Include="Controllers\ListTransformersController.cs" />
-    <Compile Include="Controllers\ListTransformersInputModel.cs" />
-    <Compile Include="Controllers\ListTransformersViewModel.cs" />
+    <Compile Include="Controllers\ListFiguresController.cs" />
+    <Compile Include="Controllers\ListFiguresInputModel.cs" />
+    <Compile Include="Controllers\ListFiguresViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,10 +160,17 @@
     <Content Include="fubu-content\fubumvc-diagnostics.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\SayHello.cshtml" />
+    <Content Include="Controllers\SayHello.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controllers\ListFigures.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
