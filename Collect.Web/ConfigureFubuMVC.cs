@@ -13,12 +13,13 @@ namespace Collect.Web
 
             // All public methods from concrete classes ending in "Controller"
             // in this assembly are assumed to be action methods
-            Actions.IncludeClassesSuffixedWithController();
+			Actions.IncludeClassesSuffixedWithController();
 
             // Policies
             Routes
 				.HomeIs<HelloInputModel>()
                 .IgnoreControllerNamesEntirely()
+				.IgnoreControllerNamespaceEntirely()
                 .IgnoreMethodSuffix("Html")
 				.RootAtAssemblyNamespace();
 
