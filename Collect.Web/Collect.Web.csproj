@@ -160,17 +160,13 @@
     <Content Include="fubu-content\fubumvc-diagnostics.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\SayHello.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Controllers\SayHello.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\ListFigures.cshtml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Controllers\ListFigures.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
