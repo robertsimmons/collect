@@ -169,7 +169,7 @@
     <Content Include="ListAllFigures\ListFigures.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shared\_Layout.cshtml" />
+    <Content Include="Shared\Application.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
