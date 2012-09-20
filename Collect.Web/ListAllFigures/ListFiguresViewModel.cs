@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Collect.Web.Controllers
+namespace Collect.Web.ListAllFigures
 {
-    public class HelloInputModel
-    {
-    }
+	public class ListFiguresViewModel
+	{
+	}
 }

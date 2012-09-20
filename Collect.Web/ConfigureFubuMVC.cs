@@ -1,4 +1,4 @@
-using Collect.Web.Controllers;
+using Collect.Web.Hello;
 using FubuMVC.Core;
 using FubuMVC.Razor;
 

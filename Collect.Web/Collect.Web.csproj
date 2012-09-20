@@ -138,12 +138,12 @@
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenDBBootstrapper.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />
-    <Compile Include="Controllers\HelloInputModel.cs" />
-    <Compile Include="Controllers\HelloViewModel.cs" />
-    <Compile Include="Controllers\HelloWorldController.cs" />
-    <Compile Include="Controllers\ListFiguresController.cs" />
-    <Compile Include="Controllers\ListFiguresInputModel.cs" />
-    <Compile Include="Controllers\ListFiguresViewModel.cs" />
+    <Compile Include="Hello\HelloInputModel.cs" />
+    <Compile Include="Hello\HelloViewModel.cs" />
+    <Compile Include="Hello\HelloWorldController.cs" />
+    <Compile Include="ListAllFigures\ListFiguresController.cs" />
+    <Compile Include="ListAllFigures\ListFiguresInputModel.cs" />
+    <Compile Include="ListAllFigures\ListFiguresViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -160,13 +160,16 @@
     <Content Include="fubu-content\fubumvc-diagnostics.zip" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\SayHello.cshtml" />
+    <Content Include="Hello\SayHello.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\ListFigures.cshtml" />
+    <Content Include="ListAllFigures\ListFigures.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Shared\_Layout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

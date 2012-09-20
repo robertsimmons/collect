@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Raven.Client;
 
-namespace Collect.Web.Controllers
+namespace Collect.Web.ListAllFigures
 {
 	public class ListFiguresController
 	{
