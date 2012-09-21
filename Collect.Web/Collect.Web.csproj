@@ -135,9 +135,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFigures\AddFigureController.cs" />
+    <Compile Include="AddFigures\AddFigureInputModel.cs" />
+    <Compile Include="AddFigures\AddFigurePostInputModel.cs" />
+    <Compile Include="AddFigures\AddFigureViewModel.cs" />
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenDBBootstrapper.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />
+    <Compile Include="Domain\Entities\Figure.cs" />
     <Compile Include="Hello\HelloInputModel.cs" />
     <Compile Include="Hello\HelloViewModel.cs" />
     <Compile Include="Hello\HelloWorldController.cs" />
@@ -170,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Shared\Application.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddFigures\AddFigure.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

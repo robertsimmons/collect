@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Raven.Client;
+using Raven.Client.Document;
+using Collect.Web.Domain.Entities;
 
 namespace Collect.Web.ListAllFigures
 {
@@ -10,7 +11,24 @@ namespace Collect.Web.ListAllFigures
 	{
 		public ListFiguresViewModel ListFigures(ListFiguresInputModel input)
 		{
-			return new ListFiguresViewModel();
+			var result = new ListFiguresViewModel();
+
+			using (var documentStore = new DocumentStore { Url = "http://localhost:8080" })
+			{
+				documentStore.Initialize();
+
+				using (var documentSession = documentStore.OpenSession("Collect"))
+				{
+					result.Figures = documentSession.Query<Figure>().Select(figure => new ListFigureViewModel()
+						{
+							FigureName = figure.Name,
+							Series = figure.Series,
+							YearReleased = figure.Year
+						}).ToList();
+				}
+			}
+
+			return result;
 		}
 	}
 }

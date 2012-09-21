@@ -29,6 +29,8 @@ namespace Collect.Web.App_Start
                 .StructureMap(new Container())
                 .Bootstrap();
 
+			RavenDBBootstrapper.Bootstrap();
+
 			// Ensure that no errors occurred during bootstrapping
 			PackageRegistry.AssertNoFailures();
         }
