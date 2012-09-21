@@ -26,7 +26,7 @@ namespace Collect.Web.App_Start
                 // but FubuMVC just adds configuration to an IoC container so
                 // that you can use the native registration API's for your
                 // IoC container for the rest of your application
-                .StructureMap(new Container())
+				.StructureMap(new Container(x => x.AddRegistry<RavenStructureMapRegistry>()))
                 .Bootstrap();
 
 			RavenDBBootstrapper.Bootstrap();

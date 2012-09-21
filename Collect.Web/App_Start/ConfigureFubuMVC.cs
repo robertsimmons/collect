@@ -2,7 +2,7 @@ using Collect.Web.Hello;
 using FubuMVC.Core;
 using FubuMVC.Razor;
 
-namespace Collect.Web
+namespace Collect.Web.App_Start
 {
 	public class ConfigureFubuMVC : FubuRegistry
 	{
@@ -28,6 +28,8 @@ namespace Collect.Web
 			// Match views to action methods by matching
 			// on model type, view name, and namespace
 			Views.TryToAttachWithDefaultConventions();
+
+			Policies.WrapBehaviorChainsWith<RavenBehavior>();
 		}
 	}
 }

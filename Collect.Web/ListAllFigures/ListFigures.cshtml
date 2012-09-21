@@ -1,5 +1,7 @@
 ﻿@model Collect.Web.ListAllFigures.ListFiguresViewModel
 
+<h1>Figures:</h1>
+
 @foreach (var figure in Model.Figures)
 {
 	<div><span>@figure.FigureName - @figure.Series - @figure.YearReleased</span></div>
