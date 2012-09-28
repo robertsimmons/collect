@@ -1,13 +1,12 @@
-using System.Web.Routing;
 using Bottles;
 using FubuMVC.Core;
 using FubuMVC.StructureMap;
 using StructureMap;
 
 // You can remove the reference to WebActivator by calling the Start() method from your Global.asax Application_Start
-[assembly: WebActivator.PreApplicationStartMethod(typeof(Collect.Web.App_Start.AppStartFubuMVC), "Start", callAfterGlobalAppStart: true)]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(Collect.Web.Tests.App_Start.AppStartFubuMVC), "Start", callAfterGlobalAppStart: true)]
 
-namespace Collect.Web.App_Start
+namespace Collect.Web.Tests.App_Start
 {
     public static class AppStartFubuMVC
     {
@@ -26,7 +25,7 @@ namespace Collect.Web.App_Start
                 // but FubuMVC just adds configuration to an IoC container so
                 // that you can use the native registration API's for your
                 // IoC container for the rest of your application
-				.StructureMap(new Container(x => x.AddRegistry<RavenStructureMapRegistry>()))
+                .StructureMap(new Container())
                 .Bootstrap();
 
 			// Ensure that no errors occurred during bootstrapping

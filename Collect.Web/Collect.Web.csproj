@@ -141,7 +141,6 @@
     <Compile Include="AddFigures\AddFigureViewModel.cs" />
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenBehavior.cs" />
-    <Compile Include="App_Start\RavenDBBootstrapper.cs" />
     <Compile Include="App_Start\ConfigureFubuMVC.cs" />
     <Compile Include="App_Start\RavenStructureMapRegistry.cs" />
     <Compile Include="Domain\Entities\Figure.cs" />

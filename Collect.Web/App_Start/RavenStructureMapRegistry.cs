@@ -8,6 +8,7 @@ using Raven.Client.Document;
 using Raven.Client.Extensions;
 using Raven.Client.Indexes;
 using System.Reflection;
+using System.Configuration;
 
 namespace Collect.Web.App_Start
 {
@@ -15,17 +16,15 @@ namespace Collect.Web.App_Start
 	{
 		public RavenStructureMapRegistry()
 		{
-			//TODO: Get from config
-			var documentStore = new DocumentStore { Url = "http://localhost:8080" };
+			var documentStore = new DocumentStore { Url = ConfigurationManager.AppSettings["RavenDbURL"] };
 			documentStore.Initialize();
 
-			//TODO: Remove before production
-			documentStore.DatabaseCommands.EnsureDatabaseExists("Collect");
-
+#if DEBUG
+			documentStore.DatabaseCommands.EnsureDatabaseExists(ConfigurationManager.AppSettings["CollectionName"]);
+#endif
 			IndexCreation.CreateIndexes(Assembly.GetCallingAssembly(), documentStore);
 
-			//TODO: Get collection name from config
-			For<IDocumentSession>().Use(() => documentStore.OpenSession("Collect"));
+			For<IDocumentSession>().Use(() => documentStore.OpenSession(ConfigurationManager.AppSettings["CollectionName"]));
 
 			//TODO: Find out if this is required...works without it, but may be doing Bad Things.
 			//For<IDocumentStore>().Singleton().Use(documentStore);
