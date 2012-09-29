@@ -3,15 +3,26 @@
 <html>
 <head>
 	<title>Collect crap</title>
+	<script src="./Shared/Scripts/jquery-1.8.2.js" type="text/javascript"></script>
+	<link href="./Shared/CSS/main.css" type="text/css" rel="stylesheet"></link>
 </head>
 <body>
+	<header>
+		<p>[Logo here]</p>
+	</header>
 	<nav>
 		<ul>
-			<li><a href="listfigures">List figures</a></li>
-			<li><a href="addfigure">Add figure</a></li>
+			<li><a href="listfigures">List Figures</a></li>
+			<li><a href="addfigure">Add Figure</a></li>
 		</ul>
 	</nav>
 
-	@RenderBody()
+	<article>
+		@RenderBody()
+	</article>
+
+	<footer>
+		heyo
+	</footer>
 </body>
 </html>

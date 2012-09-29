@@ -1,0 +1,61 @@
+﻿body
+{
+	font-family: Verdana;
+	margin: 0px;
+	font-size: large;
+}
+
+header
+{
+	line-height: 5em;
+	vertical-align: middle;
+}
+
+nav
+{
+	font-weight: bold;
+}
+
+nav  ul
+{
+	padding: 1em;
+	background-color: #0094FF;
+}
+
+nav ul li
+{
+	display: inline-block;
+}
+
+
+nav ul li a:visited,
+nav ul li a:hover,
+nav ul li a:active,
+nav ul li a
+{
+	color: #FFFFFF;
+	padding: 1em;
+}
+
+nav ul li a:hover
+{
+	background-color: #57C9FF;
+}
+
+a:visited,
+a:hover,
+a:active,
+a
+{
+	text-decoration: none;
+}
+
+article
+{
+	padding: 3em;
+}
+
+footer
+{
+	text-align: center;
+}
