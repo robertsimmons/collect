@@ -58,4 +58,19 @@ article
 footer
 {
 	text-align: center;
+	font-weight: normal;
+	font-size: small;
+	border-top: 1px solid black;
+}
+
+fieldset 
+{
+	border: none;
+	text-align: center;
+	line-height: 2em;
+}
+
+input[type=submit]
+{
+	border-radius: 3em;
 }
