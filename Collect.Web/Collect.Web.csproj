@@ -133,6 +133,10 @@
     <None Include="Shared\Scripts\jquery-1.8.2.intellisense.js">
       <DependentUpon>jquery-1.8.2.js</DependentUpon>
     </None>
+    <Content Include="Shared\Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Shared\Scripts\knockout.mapping-latest.js" />
+    <Content Include="Shared\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Shared\Scripts\knockout-2.2.0.js" />
     <Content Include="Shared\CSS\main.css" />
     <Content Include="Shared\Scripts\jquery-1.8.2.js" />
     <Content Include="Shared\Scripts\jquery-1.8.2.min.js">
@@ -144,8 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFigures\AddFigureController.cs" />
-    <Compile Include="AddFigures\AddFigureInputModel.cs" />
-    <Compile Include="AddFigures\AddFigurePostInputModel.cs" />
     <Compile Include="AddFigures\AddFigureViewModel.cs" />
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenBehavior.cs" />

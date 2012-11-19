@@ -109,6 +109,7 @@
     <Content Include="Readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFigures\AddFigurePostedSpecs.cs" />
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenBehavior.cs" />
     <Compile Include="ConfigureFubuMVC.cs" />

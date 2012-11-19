@@ -7,6 +7,11 @@ namespace Collect.Web.Domain.Entities
 {
 	public class Figure
 	{
+		public Figure()
+		{
+			Id = new Guid();
+		}
+
 		public Guid Id { get; set; }
 		public string Name { get; set; }
 		public int Year { get; set; }

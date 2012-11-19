@@ -16,12 +16,12 @@ namespace Collect.Web.AddFigures
 			_documentSession = documentSession;
 		}
 
-		public AddFigureViewModel AddFigure(AddFigureInputModel input)
+		public AddFigureViewModel AddFigure(AddFigureViewModel input)
 		{
 			return new AddFigureViewModel();
 		}
 
-		public AddFigureViewModel AddFigurePosted(AddFigurePostInputModel input)
+		public AddFigureViewModel AddFigurePosted(AddFigureViewModel input)
 		{
 			//TODO: Remove. This is for testing
 			if (input.FigureName == "fail")
@@ -35,13 +35,15 @@ namespace Collect.Web.AddFigures
 
 			_documentSession.Store(new Figure()
 				{
-					Id = new Guid(),
 					Name = input.FigureName,
-					Year = input.YearReleased,
+					Year = input.Year,
 					Series = input.Series
 				});
 
-			return new AddFigureViewModel();
+			return new AddFigureViewModel()
+				{
+					StatusMessage = string.Format("Figure '{0}' added!", input.FigureName)
+				};
 		}
 	}
 }

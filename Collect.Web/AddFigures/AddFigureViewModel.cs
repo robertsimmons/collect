@@ -9,5 +9,7 @@ namespace Collect.Web.AddFigures
 	{
 		public string StatusMessage { get; set; }
 		public string FigureName { get; set; }
+		public string Series { get; set; }
+		public int Year { get; set; }
 	}
 }

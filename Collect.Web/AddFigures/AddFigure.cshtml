@@ -1,4 +1,5 @@
 ﻿@model Collect.Web.AddFigures.AddFigureViewModel
+@using Newtonsoft.Json;
 
 @if (!string.IsNullOrEmpty(Model.StatusMessage))
 {
@@ -9,7 +10,13 @@
 
 	<fieldset>
 		<label for="FigureName">Name:</label>
-		<input name="FigureName" type="text" value="@Model.FigureName" />
+		<input name="FigureName" type="text" maxlength="50" required placeholder="Name" value="@Model.FigureName" />
+
+		<label for="Year">Year:</label>
+		<input name="Year" type="number" max="2020" min="1980" required placeholder="Year" value="@Model.Year" />
+
+		<label for="Series">Series:</label>
+		<input name="Series" type="text" maxlength="50" required" placeholder="Series" value="@Model.Series" />
 	</fieldset>
 
 	<div><input type="submit" value="Add!" /></div>
