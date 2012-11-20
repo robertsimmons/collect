@@ -17,6 +17,7 @@ namespace Collect.Web.ListAllFigures
 
 	public class ListFigureViewModel
 	{
+		public Guid Id { get; set; }
 		public string FigureName { get; set; }
 		public string Series { get; set; }
 		public int YearReleased { get; set; }

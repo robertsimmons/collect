@@ -1,8 +1,37 @@
 ﻿@model Collect.Web.ListAllFigures.ListFiguresViewModel
 
+<div id="message" style="display: none;"><span></span></div>
+
 <h1>Figures:</h1>
 
 @foreach (var figure in Model.Figures)
 {
-	<div><span>@figure.FigureName - @figure.Series - @figure.YearReleased</span></div>
+	<div><span>@figure.FigureName - @figure.Series - @figure.YearReleased <input type="button" class="delete" data-id="@figure.Id" value="X" /></span></div>
 }
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".delete").on("click", function (event) {
+			var id = $(this).data("id");
+			$.ajax({
+				url: "delete",
+				type: "POST",
+				data:
+					{
+						IdToDelete: id
+					}
+			})
+			.done(function (result) {
+				$("#message").show();
+				$("#message span").html(result.StatusMessage);
+
+				if (result.Success) {
+					$("#message").css("color", "green");
+				}
+				else {
+					$("#message").css("color", "red");
+				}
+			});
+		});
+	});
+</script>

@@ -24,7 +24,8 @@ namespace Collect.Web.ListAllFigures
 				{
 					FigureName = figure.Name,
 					Series = figure.Series,
-					YearReleased = figure.Year
+					YearReleased = figure.Year,
+					Id = figure.Id
 				}).ToList();
 
 			return result;

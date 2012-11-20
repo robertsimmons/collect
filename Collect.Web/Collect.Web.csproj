@@ -214,11 +214,14 @@
   <ItemGroup>
     <Compile Include="AddFigures\AddFigureController.cs" />
     <Compile Include="AddFigures\AddFigureViewModel.cs" />
+    <Compile Include="DeleteFigures\DeleteInputModel.cs" />
     <Compile Include="App_Start\FubuMVC.cs" />
     <Compile Include="App_Start\RavenBehavior.cs" />
     <Compile Include="App_Start\ConfigureFubuMVC.cs" />
     <Compile Include="App_Start\RavenDBStartup.cs" />
     <Compile Include="App_Start\RavenStructureMapRegistry.cs" />
+    <Compile Include="DeleteFigures\DeleteFigureController.cs" />
+    <Compile Include="DeleteFigures\DeleteOutputModel.cs" />
     <Compile Include="Domain\Entities\Figure.cs" />
     <Compile Include="Hello\HelloInputModel.cs" />
     <Compile Include="Hello\HelloViewModel.cs" />
@@ -260,6 +263,7 @@
   <ItemGroup>
     <Content Include="AddFigures\AddFigure.cshtml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
