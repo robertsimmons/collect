@@ -5,7 +5,7 @@ using FubuMVC.StructureMap;
 using StructureMap;
 
 // You can remove the reference to WebActivator by calling the Start() method from your Global.asax Application_Start
-[assembly: WebActivator.PreApplicationStartMethod(typeof(Collect.Web.App_Start.AppStartFubuMVC), "Start", callAfterGlobalAppStart: true)]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(Collect.Web.App_Start.AppStartFubuMVC), "Start")]
 
 namespace Collect.Web.App_Start
 {
@@ -28,6 +28,8 @@ namespace Collect.Web.App_Start
                 // IoC container for the rest of your application
 				.StructureMap(new Container(x => x.AddRegistry<RavenStructureMapRegistry>()))
                 .Bootstrap();
+
+			RavenDBStartup.Bootstrap();
 
 			// Ensure that no errors occurred during bootstrapping
 			PackageRegistry.AssertNoFailures();

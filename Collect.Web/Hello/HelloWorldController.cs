@@ -11,7 +11,7 @@ namespace Collect.Web.Hello
 		{
 			return new HelloViewModel
 			{
-				Message = "Hello Razor"
+				Message = "ohai"
 			};
 		}
 	}
