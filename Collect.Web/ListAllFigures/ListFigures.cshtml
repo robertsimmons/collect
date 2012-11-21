@@ -6,13 +6,17 @@
 
 @foreach (var figure in Model.Figures)
 {
-	<div><span>@figure.FigureName - @figure.Series - @figure.YearReleased <input type="button" class="delete" data-id="@figure.Id" value="X" /></span></div>
+	<div class="figure">
+		<span class="header"><span class="title">@figure.FigureName</span> <input type="button" class="delete" data-id="@figure.Id" value="X" /></span>
+		<span class="details">@figure.YearReleased, @figure.Series </span>
+	</div>
 }
 
 <script type="text/javascript">
 	$(document).ready(function () {
 		$(".delete").on("click", function (event) {
 			var id = $(this).data("id");
+			var parent = $(this).closest(".figure");
 			$.ajax({
 				url: "delete",
 				type: "POST",
@@ -27,6 +31,7 @@
 
 				if (result.Success) {
 					$("#message").css("color", "green");
+					parent.remove();
 				}
 				else {
 					$("#message").css("color", "red");

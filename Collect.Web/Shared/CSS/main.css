@@ -1,29 +1,24 @@
-﻿body
-{
+﻿body {
 	font-family: Verdana;
 	margin: 0px;
 	font-size: large;
 }
 
-header
-{
+header {
 	line-height: 5em;
 	vertical-align: middle;
 }
 
-nav
-{
+nav {
 	font-weight: bold;
 }
 
-nav  ul
-{
+nav ul {
 	padding: 1em;
 	background-color: #0094FF;
 }
 
-nav ul li
-{
+nav ul li {
 	display: inline-block;
 }
 
@@ -31,46 +26,74 @@ nav ul li
 nav ul li a:visited,
 nav ul li a:hover,
 nav ul li a:active,
-nav ul li a
-{
+nav ul li a {
 	color: #FFFFFF;
 	padding: 1em;
 }
 
-nav ul li a:hover
-{
+nav ul li a:hover {
 	background-color: #57C9FF;
 }
 
 a:visited,
 a:hover,
 a:active,
-a
-{
+a {
 	text-decoration: none;
 }
 
-article
-{
+article {
 	padding: 3em;
 }
 
-footer
-{
+footer {
 	text-align: center;
 	font-weight: normal;
 	font-size: small;
 	border-top: 1px solid black;
 }
 
-fieldset 
-{
+fieldset {
 	border: none;
 	text-align: center;
 	line-height: 2em;
 }
 
-input[type=submit]
-{
+input[type=submit] {
 	border-radius: 3em;
+}
+
+.figure {
+	background-color: #EEE;
+	width: 20em;
+	margin: 1em;
+}
+
+.figure .header .title {
+	float: left;
+	font-size: larger;
+	max-width: 13em;
+	overflow: auto;
+}
+
+.figure .header input {
+	float: right;
+}
+
+.figure .header:before,
+.figure .header:after{
+	content: " ";
+    display: table;
+}
+
+.figure .header:after{
+    clear: both;
+}
+
+.figure .header:after{
+    *zoom: 1;
+}
+
+.figure .details {
+	color: gray;
 }
