@@ -58,13 +58,28 @@ fieldset {
 	border: none;
 	text-align: center;
 	line-height: 2em;
+	margin: auto;
+	width: 50em;
 }
 
-input {
+fieldset label {
+    display: block;
+    float: left;
+    text-align: right;
+	margin-right: 2em;
+    width: 12em;
+}
+
+fieldset input {
+	float: left;
+}
+
+input,
+button {
 	font-size: large;
 }
 
-input[type=submit] {
+button {
 	margin-top: 1em;
 	border-radius: 3em;
 }
@@ -87,19 +102,32 @@ input[type=submit] {
 }
 
 .figure .header:before,
-.figure .header:after{
+.figure .header:after {
 	content: " ";
     display: table;
 }
 
-.figure .header:after{
+.figure .header:after {
     clear: both;
 }
 
-.figure .header:after{
+.figure .header:after {
     *zoom: 1;
 }
 
 .figure .details {
 	color: gray;
+}
+
+fieldset .LV_validation_message {
+	float: left;
+	margin-left: 2em;
+}
+
+fieldset .LV_valid {
+    color: green;
+}
+	
+fieldset .LV_invalid {
+    color: red;
 }
