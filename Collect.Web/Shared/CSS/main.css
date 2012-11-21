@@ -44,6 +44,7 @@ a {
 
 article {
 	padding: 3em;
+	text-align: center;
 }
 
 footer {
@@ -59,14 +60,19 @@ fieldset {
 	line-height: 2em;
 }
 
+input {
+	font-size: large;
+}
+
 input[type=submit] {
+	margin-top: 1em;
 	border-radius: 3em;
 }
 
 .figure {
 	background-color: #EEE;
 	width: 20em;
-	margin: 1em;
+	margin: 1em auto;
 }
 
 .figure .header .title {
