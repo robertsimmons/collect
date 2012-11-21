@@ -7,6 +7,6 @@ namespace Collect.Web.DeleteFigures
 {
 	public class DeleteInputModel
 	{
-		public int IdToDelete { get; set; }
+		public Guid IdToDelete { get; set; }
 	}
 }
