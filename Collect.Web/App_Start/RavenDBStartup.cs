@@ -10,6 +10,8 @@ using System.Reflection;
 using Raven.Client;
 using System.ComponentModel.Composition.Hosting;
 using Collect.Web.Lookups;
+using System.Diagnostics;
+using System.IO;
 
 namespace Collect.Web.App_Start
 {
@@ -17,6 +19,10 @@ namespace Collect.Web.App_Start
 	{
 		public static void Bootstrap()
 		{
+#if DEBUG
+			EnsureRavenDbServerIsRunning();
+#endif
+
 			DocumentStoreInstance = new DocumentStore { Url = ConfigurationManager.AppSettings["RavenDbURL"] };
 			DocumentStoreInstance.Initialize();
 
@@ -27,6 +33,22 @@ namespace Collect.Web.App_Start
 			var catalog = new CompositionContainer(new AssemblyCatalog(typeof(SeriesLookupMapReduce).Assembly));
 
 			IndexCreation.CreateIndexes(catalog, DocumentStoreInstance.DatabaseCommands.ForDatabase(ConfigurationManager.AppSettings["CollectionName"]), DocumentStoreInstance.Conventions);
+		}
+
+		private static void EnsureRavenDbServerIsRunning()
+		{
+			var ravenExeName = "Raven.Server";
+
+			if (Process.GetProcessesByName(ravenExeName).Length > 0)
+			{
+				return;
+			}
+
+			var currentDir = AppDomain.CurrentDomain.BaseDirectory;
+			var ravenServerRelativeDirectory = @"..\packages\RavenDB.Server.1.2.2150-Unstable\tools";
+
+			var fullPath = Path.Combine(currentDir, ravenServerRelativeDirectory);
+			Process.Start(Path.Combine(fullPath, ravenExeName + ".exe"));
 		}
 
 		public static DocumentStore DocumentStoreInstance; 
