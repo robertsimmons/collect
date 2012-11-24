@@ -12,7 +12,7 @@
 
 	<fieldset>
 		<label for="FigureName">Name:</label>
-		<input name="FigureName" type="text" maxlength="50" required placeholder="Name" />
+		<input name="FigureName" id="name" type="text" maxlength="50" required placeholder="Name" />
 		<br />
 		<label for="Year">Year:</label>
 		<input name="Year" id="year" type="number" min="1980" max="2020" required placeholder="Year"/>
@@ -32,9 +32,35 @@
 			source: "/SeriesLookup/",
 		});
 
-		var yearValidation = new LiveValidation("year", { validMessage: "Looks good!", wait: 500 });
+		var yearValidation = new LiveValidation("year", {
+			onValid: function () {
+				validFunction(this, "year");
+			}
+		});
 		yearValidation.add(Validate.Presence, { failureMessage: "Year must be provided." });
 		yearValidation.add(Validate.Numericality, { onlyInteger: true, maximum: 2015, minimum: 1980 });
+
+		var nameValidation = new LiveValidation("name", {
+			onValid: function () {
+				validFunction(this, "name");
+			}
+		});
+		nameValidation.add(Validate.Presence, { failureMessage: "Name must be provided." });
+		nameValidation.add(Validate.Length, { maximum: 100, minimum: 2 });
+
+		var seriesValidation = new LiveValidation("series", {
+			onValid: function () {
+				validFunction(this, "series");
+			}
+		});
+		seriesValidation.add(Validate.Presence, { failureMessage: "Series must be provided." });
+		seriesValidation.add(Validate.Length, { maximum: 100, minimum: 2 });
 	});
+
+	function validFunction(element, id) {
+		element.insertMessage(element.createMessageSpan());
+		element.addFieldClass();
+		$("#" + id).next("span.LV_valid").html("&#10004;");
+	}
 
 </script>
