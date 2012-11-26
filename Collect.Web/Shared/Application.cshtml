@@ -9,6 +9,7 @@
 	<script src="./Shared/Scripts/knockout-2.2.0.js" type="text/javascript"></script>
 	<script src="./Shared/Scripts/knockout.mapping-latest.js" type="text/javascript"></script>
 	<script src="./Shared/Scripts/livevalidation.js" type="text/javascript"></script>
+	<script src="./Shared/Scripts/customlivevalidation.js" type="text/javascript"></script>
 	<link href="./Shared/CSS/main.css" type="text/css" rel="stylesheet"></link>
 	<link href="./Shared/CSS/jqueryui/themes/base/minified/jquery-ui.min.css" type="text/css" rel="stylesheet"></link>
 	<link href="./Shared/CSS/jqueryui/themes/base/minified/jquery.ui.autocomplete.min.css" type="text/css" rel="stylesheet"></link>
@@ -31,5 +32,7 @@
 	<footer>
 		done by me, yay.
 	</footer>
+
+	@RenderSection("Scripts", false)
 </body>
 </html>

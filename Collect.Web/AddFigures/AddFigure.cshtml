@@ -25,6 +25,9 @@
 
 </form>
 
+
+@section Scripts
+{
 <script type="text/javascript">
 
 	$(document).ready(function () {
@@ -32,35 +35,15 @@
 			source: "/SeriesLookup/",
 		});
 
-		var yearValidation = new LiveValidation("year", {
-			onValid: function () {
-				validFunction(this, "year");
-			}
-		});
-		yearValidation.add(Validate.Presence, { failureMessage: "Year must be provided." });
+		var yearValidation = new CustomLiveValidation("year", "Year");
 		yearValidation.add(Validate.Numericality, { onlyInteger: true, maximum: 2015, minimum: 1980 });
 
-		var nameValidation = new LiveValidation("name", {
-			onValid: function () {
-				validFunction(this, "name");
-			}
-		});
-		nameValidation.add(Validate.Presence, { failureMessage: "Name must be provided." });
+		var nameValidation = new CustomLiveValidation("name", "Name");
 		nameValidation.add(Validate.Length, { maximum: 100, minimum: 2 });
 
-		var seriesValidation = new LiveValidation("series", {
-			onValid: function () {
-				validFunction(this, "series");
-			}
-		});
-		seriesValidation.add(Validate.Presence, { failureMessage: "Series must be provided." });
+		var seriesValidation = new CustomLiveValidation("series", "Series");
 		seriesValidation.add(Validate.Length, { maximum: 100, minimum: 2 });
+
 	});
-
-	function validFunction(element, id) {
-		element.insertMessage(element.createMessageSpan());
-		element.addFieldClass();
-		$("#" + id).next("span.LV_valid").html("&#10004;");
-	}
-
 </script>
+}
