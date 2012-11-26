@@ -196,6 +196,7 @@
     <None Include="Shared\Scripts\jquery-1.8.2.intellisense.js">
       <DependentUpon>jquery-1.8.2.js</DependentUpon>
     </None>
+    <Content Include="Shared\Scripts\customlivevalidation.js" />
     <Content Include="Shared\Scripts\jquery-ui-1.9.0.js" />
     <Content Include="Shared\Scripts\jquery-ui-1.9.0.min.js" />
     <Content Include="Shared\Scripts\knockout.mapping-latest.debug.js" />
@@ -207,6 +208,7 @@
     <Content Include="Shared\Scripts\jquery-1.8.2.min.js">
       <DependentUpon>jquery-1.8.2.js</DependentUpon>
     </Content>
+    <Content Include="Shared\Scripts\livevalidation.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
