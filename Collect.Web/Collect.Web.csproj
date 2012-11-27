@@ -239,7 +239,6 @@
     <Compile Include="Lookups\SeriesLookupResultsModel.cs" />
     <Compile Include="SearchFigures\SearchFigureController.cs" />
     <Compile Include="SearchFigures\SearchFigureInputModel.cs" />
-    <Compile Include="SearchFigures\SearchFigureIndex.cs" />
     <Compile Include="ViewFigures\ViewFigureController.cs" />
     <Compile Include="ViewFigures\ViewFigureInputModel.cs" />
     <Compile Include="ViewFigures\ViewFigureViewModel.cs" />
