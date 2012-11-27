@@ -212,6 +212,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ViewFigures\ViewFigure.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddFigures\AddFigureController.cs" />
@@ -236,6 +237,9 @@
     <Compile Include="Lookups\SeriesLookupController.cs" />
     <Compile Include="Lookups\SeriesLookupInputModel.cs" />
     <Compile Include="Lookups\SeriesLookupResultsModel.cs" />
+    <Compile Include="ViewFigures\ViewFigureController.cs" />
+    <Compile Include="ViewFigures\ViewFigureInputModel.cs" />
+    <Compile Include="ViewFigures\ViewFigureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.Debug.config">

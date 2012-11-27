@@ -20,13 +20,16 @@ namespace Collect.Web.ListAllFigures
 		{
 			var result = new ListFiguresViewModel();
 
-			result.Figures = _documentSession.Query<Figure>().Select(figure => new ListFigureViewModel()
+			result.Figures = _documentSession.Query<Figure>()
+				.OrderBy(x => x.Name)
+				.Select(figure => new ListFigureViewModel()
 				{
 					FigureName = figure.Name,
 					Series = figure.Series,
 					YearReleased = figure.Year,
 					Id = figure.Id
-				}).ToList();
+				})
+				.ToList();
 
 			return result;
 		}
