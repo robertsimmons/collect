@@ -26,7 +26,7 @@ namespace Collect.Web.Lookups
 				input.term = "";
 			}
 			
-			var results = _documentSession.Query<SeriesLookupMapReduce.ReduceResult, SeriesLookupMapReduce>()
+			var results = _documentSession.Query<SeriesLookupIndex.ReduceResult, SeriesLookupIndex>()
 							.Where(x => x.Series.StartsWith(input.term))
 							.Select(x => x.Series).ToArray();
 

@@ -10,12 +10,15 @@ header {
 }
 
 nav {
+	background-color: #0094FF;
 	font-weight: bold;
+	display: inline-block;
+	width: 100%;
 }
 
 nav ul {
-	padding: 1em;
-	background-color: #0094FF;
+	padding: 0.5em;
+	float: left;
 }
 
 nav ul li {
@@ -137,4 +140,24 @@ a:visited,
 a:hover {
 	color: inherit;
 	text-decoration: none;
+}
+
+#search-form {
+	display: inline;
+	float: right;
+	padding: 1.25em;
+}
+
+#search-form:before,
+#search-form:after {
+	content: " ";
+    display: table;
+}
+
+#search-form:after {
+    clear: both;
+}
+
+#search-form:after {
+    *zoom: 1;
 }

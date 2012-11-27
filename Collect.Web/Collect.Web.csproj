@@ -232,11 +232,14 @@
     <Compile Include="ListAllFigures\ListFiguresController.cs" />
     <Compile Include="ListAllFigures\ListFiguresInputModel.cs" />
     <Compile Include="ListAllFigures\ListFiguresViewModel.cs" />
-    <Compile Include="Lookups\SeriesLookupMapReduce.cs" />
+    <Compile Include="Lookups\SeriesLookupIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lookups\SeriesLookupController.cs" />
     <Compile Include="Lookups\SeriesLookupInputModel.cs" />
     <Compile Include="Lookups\SeriesLookupResultsModel.cs" />
+    <Compile Include="SearchFigures\SearchFigureController.cs" />
+    <Compile Include="SearchFigures\SearchFigureInputModel.cs" />
+    <Compile Include="SearchFigures\SearchFigureIndex.cs" />
     <Compile Include="ViewFigures\ViewFigureController.cs" />
     <Compile Include="ViewFigures\ViewFigureInputModel.cs" />
     <Compile Include="ViewFigures\ViewFigureViewModel.cs" />

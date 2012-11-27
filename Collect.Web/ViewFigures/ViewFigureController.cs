@@ -16,7 +16,7 @@ namespace Collect.Web.ViewFigures
 			_documentSession = documentSession;
 		}
 
-		public ViewFigureViewModel ViewFigure(ViewFigureInputModel input)
+		public ViewFigureViewModel ViewFigure_FigureId(ViewFigureInputModel input)
 		{
 			var figure = _documentSession.Load<Figure>(input.FigureId);
 

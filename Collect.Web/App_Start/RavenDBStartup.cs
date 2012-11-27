@@ -30,7 +30,7 @@ namespace Collect.Web.App_Start
 			DocumentStoreInstance.DatabaseCommands.EnsureDatabaseExists(ConfigurationManager.AppSettings["CollectionName"]);
 #endif
 
-			var catalog = new CompositionContainer(new AssemblyCatalog(typeof(SeriesLookupMapReduce).Assembly));
+			var catalog = new CompositionContainer(new AssemblyCatalog(typeof(SeriesLookupIndex).Assembly));
 
 			IndexCreation.CreateIndexes(catalog, DocumentStoreInstance.DatabaseCommands.ForDatabase(ConfigurationManager.AppSettings["CollectionName"]), DocumentStoreInstance.Conventions);
 		}

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Collect.Web.Lookups
 {
-	public class SeriesLookupMapReduce : AbstractIndexCreationTask<Figure, SeriesLookupMapReduce.ReduceResult>
+	public class SeriesLookupIndex : AbstractIndexCreationTask<Figure, SeriesLookupIndex.ReduceResult>
 	{
 		public class ReduceResult
 		{
@@ -15,7 +15,7 @@ namespace Collect.Web.Lookups
 			public int Count { get; set; }
 		}
 
-		public SeriesLookupMapReduce()
+		public SeriesLookupIndex()
 		{
 			Map = figures => from figure in figures
 							 select new { Series = figure.Series, Count = 1 };

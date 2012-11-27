@@ -7,7 +7,7 @@
 @foreach (var figure in Model.Figures)
 {
 	<div class="figure">
-		<span class="header"><span class="title"><a href="viewfigure?FigureId=@figure.Id">@figure.FigureName</a></span> <input type="button" class="delete" data-id="@figure.Id" value="X" /></span>
+		<span class="header"><span class="title"><a href="/viewfigure/@figure.Id">@figure.FigureName</a></span> <input type="button" class="delete" data-id="@figure.Id" value="X" /></span>
 		<span class="details">@figure.YearReleased, @figure.Series </span>
 	</div>
 }
