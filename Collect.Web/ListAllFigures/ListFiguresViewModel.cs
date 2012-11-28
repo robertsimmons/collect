@@ -9,9 +9,11 @@ namespace Collect.Web.ListAllFigures
 	{
 		public ListFiguresViewModel()
 		{
+			PageHeader = "Browse Figures";
 			Figures = new List<ListFigureViewModel>();
 		}
 
+		public string PageHeader { get; set; }
 		public IList<ListFigureViewModel> Figures { get; set; }
 	}
 

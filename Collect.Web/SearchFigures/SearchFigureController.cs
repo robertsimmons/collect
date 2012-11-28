@@ -32,6 +32,7 @@ namespace Collect.Web.SearchFigures
 
 			return new ListFiguresViewModel()
 				{
+					PageHeader = string.Format("Figures found for '{0}'", input.SearchTerm),
 					Figures = figures.ToList()
 				};
 		}
