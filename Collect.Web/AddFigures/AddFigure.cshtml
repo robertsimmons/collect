@@ -20,6 +20,8 @@
 		<label for="Series">Series:</label>
 		<input name="Series" id="series" type="text" maxlength="50" required placeholder="Series" />
 		<br />
+		<label for="Tags">Tags:</label>
+		<input name="Tags" id="tags" />
 		<button>Add new figure!</button>
 	</fieldset>
 
@@ -31,6 +33,27 @@
 <script type="text/javascript">
 
 	$(document).ready(function () {
+
+		$('#tags').tagit({
+			//autocomplete_url: '/TagLookup',
+			autocomplete: {
+				source: function (request, response) {
+					var used = $("#tags").val();
+					$.ajax({
+						url: "/taglookup",
+						dataType: "json",
+						data: {
+							term: request.term,
+							used: used
+						},
+						success: function(data) {
+							response(data);
+						}//HOLY PARENS AND CURLIES BATMAN!
+					}); 
+				}
+			}
+		});
+
 		$("#series").autocomplete({
 			source: "/SeriesLookup/",
 		});

@@ -19,6 +19,7 @@ namespace Collect.Web.SearchFigures
 
 		public ListFiguresViewModel SearchFigure_SearchTerm(SearchFigureInputModel input)
 		{
+			//TODO: limit results
 			var figures = _documentSession.Query<Figure>()
 				.Where(figure => figure.Name.StartsWith(input.SearchTerm))
 				.ToList()

@@ -23,5 +23,6 @@ namespace Collect.Web.ListAllFigures
 		public string FigureName { get; set; }
 		public string Series { get; set; }
 		public int YearReleased { get; set; }
+		public string Tags { get; set; }
 	}
 }

@@ -11,5 +11,6 @@ namespace Collect.Web.AddFigures
 		public string FigureName { get; set; }
 		public string Series { get; set; }
 		public int Year { get; set; }
+		public string Tags { get; set; }
 	}
 }

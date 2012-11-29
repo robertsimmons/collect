@@ -37,7 +37,8 @@ namespace Collect.Web.AddFigures
 				{
 					Name = input.FigureName,
 					Year = input.Year,
-					Series = input.Series
+					Series = input.Series,
+					Tags = input.Tags.Split(',')
 				});
 
 			return new AddFigureViewModel()

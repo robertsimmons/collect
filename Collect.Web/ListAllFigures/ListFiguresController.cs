@@ -18,18 +18,22 @@ namespace Collect.Web.ListAllFigures
 
 		public ListFiguresViewModel ListFigures(ListFiguresInputModel input)
 		{
-			var result = new ListFiguresViewModel();
 
-			result.Figures = _documentSession.Query<Figure>()
-				.OrderBy(x => x.Name)
-				.Select(figure => new ListFigureViewModel()
-				{
-					FigureName = figure.Name,
-					Series = figure.Series,
-					YearReleased = figure.Year,
-					Id = figure.Id
-				})
-				.ToList();
+			//TODO: limit results / pagination
+			var rawResults = _documentSession.Query<Figure>()
+							.OrderBy(x => x.Name)
+							.ToList();
+
+			var result = new ListFiguresViewModel();
+			result.Figures = rawResults.Select(figure => new ListFigureViewModel()
+								{
+									FigureName = figure.Name,
+									Series = figure.Series,
+									YearReleased = figure.Year,
+									Id = figure.Id,
+									Tags = figure.Tags.Count > 1 ? figure.Tags.Aggregate((x, y) => string.Format("{0}, {1}", x, y)) : figure.Tags.FirstOrDefault()
+								})
+								.ToList();
 
 			return result;
 		}
