@@ -18,7 +18,6 @@ namespace Collect.Web.ListAllFigures
 
 		public ListFiguresViewModel ListFigures(ListFiguresInputModel input)
 		{
-
 			//TODO: limit results / pagination
 			var rawResults = _documentSession.Query<Figure>()
 							.OrderBy(x => x.Name)

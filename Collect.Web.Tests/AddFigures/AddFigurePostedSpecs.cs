@@ -19,7 +19,8 @@ namespace Collect.Web.Tests.AddFigures
 		{
 			FigureName = "heyo",
 			Series = "mah series",
-			Year = 1992
+			Year = 1992,
+			Tags = "hey,you,guys"
 		};
 
 		private AddFigureViewModel _result;
@@ -35,7 +36,10 @@ namespace Collect.Web.Tests.AddFigures
 			GetMockFor<IDocumentSession>()
 				.Verify(x => x.Store(It.Is<Figure>(fig => fig.Name == _input.FigureName &&
 														fig.Series == _input.Series &&
-														fig.Year == _input.Year)), Times.Once());
+														fig.Year == _input.Year &&
+														fig.Tags[0] == "hey" &&
+														fig.Tags[1] == "you" &&
+														fig.Tags[2] == "guys")), Times.Once());
 		}
 
 		[Test]
